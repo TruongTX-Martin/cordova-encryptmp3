@@ -1,10 +1,5 @@
-package cordova-plugin-encryptmp3;
+package cordova.plugin.encryptmp3;
 
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CallbackContext;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,11 +7,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Date;
+
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaResourceApi;
+import org.json.JSONArray;
 import org.json.JSONException;
+
 import android.net.Uri;
 /**
  * This class echoes a string called from JavaScript.
@@ -32,7 +29,7 @@ public class EncryptMp3 extends CordovaPlugin {
 
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals(FILE_ENCRYPT)) {
             String argument = args.getString(0);
             if (argument != null) {
