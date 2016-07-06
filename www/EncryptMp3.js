@@ -15,7 +15,7 @@ var ksencypt = {
 		exec(
 		  success, // success callback function
 		  fail, // error callback function
-		  'KSEncrypt', // mapped to our native Java class called "Calendar"
+		  'EncryptMp3', // mapped to our native Java class called "Calendar"
 		  action, // with this action name
 		  [ file ]);
 	}
