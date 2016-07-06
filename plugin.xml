@@ -5,6 +5,10 @@
 	<clobbers target="cordova.plugins.EncryptMp3" />
 	</js-module>
 <platform name="android">
-	<config-file parent="/*" target="res/xml/config.xml"><feature name="EncryptMp3"><param name="android-package" value="cordova.plugin.encryptmp3.EncryptMp3" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/EncryptMp3.java" target-dir="src/cordova/plugin/encryptmp3/EncryptMp3" />
+	<config-file parent="/*" target="res/xml/config.xml">
+		<feature name="EncryptMp3"><param name="android-package" value="cordova/plugin/encryptmp3" /></feature>
+	</config-file>
+	<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+	<source-file src="src/android/EncryptMp3.java" target-dir="src/cordova/plugin/encryptmp3" />
 </platform>
 </plugin>
