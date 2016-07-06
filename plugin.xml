@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-encryptmp3" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova.plugin.encryptmp3" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>EncryptMp3</name>
 	<js-module name="EncryptMp3" src="www/EncryptMp3.js">
 	<clobbers target="cordova.plugins.EncryptMp3" />
 	</js-module>
 <platform name="android">
-	<config-file parent="/*" target="res/xml/config.xml"><feature name="EncryptMp3"><param name="android-package" value="cordova-plugin-encryptmp3" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/EncryptMp3.java" target-dir="src/cordova-plugin-encryptmp3/" />
+	<config-file parent="/*" target="res/xml/config.xml"><feature name="EncryptMp3"><param name="android-package" value="cordova.plugin.encryptmp3" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/EncryptMp3.java" target-dir="src/cordova.plugin.encryptmp3/" />
 </platform>
 </plugin>
