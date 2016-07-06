@@ -2,7 +2,7 @@
 <plugin id="cordova.plugin.encryptmp3" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>EncryptMp3</name>
 	<js-module name="EncryptMp3" src="www/EncryptMp3.js">
-	<clobbers target="cordova.plugins.EncryptMp3" />
+	<clobbers target="cordova/plugins/EncryptMp3" />
 	</js-module>
 <platform name="android">
 	<config-file parent="/*" target="res/xml/config.xml">
