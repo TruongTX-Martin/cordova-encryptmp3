@@ -8,7 +8,6 @@ var ksencypt = {
 		
 		var fail = function(error) {
 			callback(error);
-			alert("Not OK:" + error);
 		}
 
 
