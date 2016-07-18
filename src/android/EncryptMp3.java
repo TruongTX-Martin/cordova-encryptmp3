@@ -26,12 +26,14 @@ public class EncryptMp3 extends CordovaPlugin {
     private final String MP3 = ".mp3";
     private final String TAG = "ks";
     private final int LENGHT_TRACK = 10 * 1024;
+    private String downloadStatus = "";
 
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals(FILE_ENCRYPT)) {
             String argument = args.getString(0);
+            downloadStatus = args.getString(1);
             if (argument != null) {
                 String name = getFileMp3(argument);
                 String path = getPathMp3(argument);
@@ -58,21 +60,23 @@ public class EncryptMp3 extends CordovaPlugin {
 
                     @Override
                     public void run() {
-                        CordovaResourceApi resourceApi = webView
-                                .getResourceApi();
-                        Uri uriInput = getUriForArg(path);
-                        File folder = resourceApi.mapUriToFile(uriInput);
-                        if (folder != null && folder.exists()) {
-                            File[] listFile = folder.listFiles();
-                            if (listFile.length > 0) {
-                                for (int i = 0; i < listFile.length; i++) {
-                                    File file = listFile[i];
-                                    if (!file.getName().contains("ks")) {
-                                        file.delete();
-                                    }
-                                }
-                            }
-                        }
+                    	if(downloadStatus.contains("0")){
+	                        CordovaResourceApi resourceApi = webView
+	                                .getResourceApi();
+	                        Uri uriInput = getUriForArg(path);
+	                        File folder = resourceApi.mapUriToFile(uriInput);
+	                        if (folder != null && folder.exists()) {
+	                            File[] listFile = folder.listFiles();
+	                            if (listFile.length > 0) {
+	                                for (int i = 0; i < listFile.length; i++) {
+	                                    File file = listFile[i];
+	                                    if (!file.getName().contains("ks")) {
+	                                        file.delete();
+	                                    }
+	                                }
+	                            }
+	                        }
+                    	}
                         handleFileBeforeReverse(pathOutput.trim(),
                                 pathInput.trim(), callbackContext, false);
                     }
